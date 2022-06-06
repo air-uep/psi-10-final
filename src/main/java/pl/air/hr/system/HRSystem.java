@@ -93,14 +93,14 @@ public class HRSystem {
 
         Optional<Department> optDep = depRepo.findByName(depName);
         if (optDep.isEmpty()) {
-            System.out.println("Nie znalezniono działu");
+            System.out.println("Nie znaleziono działu");
             return;
         }
         Department department = optDep.get();
 
         Optional<Position> optPos = posRepo.findByName(posName);
         if (optPos.isEmpty()) {
-            System.out.println("Nie znalezniono stanowiska");
+            System.out.println("Nie znaleziono stanowiska");
             return;
         }
         Position position = optPos.get();
