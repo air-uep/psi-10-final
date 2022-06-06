@@ -24,9 +24,9 @@ public class HRSystem {
     @Autowired private PositionRepository posRepo;
 
     public void run() {
+        printMenu();
         while (true) {
-            printMenu();
-            int optionIdx = readService.readInt("Wybierz opcję");
+            int optionIdx = readService.readInt("\nWybierz opcję z menu");
 
             switch (optionIdx) {
                 case 1:
@@ -187,23 +187,25 @@ public class HRSystem {
 
     private void printMenu() {
         String menu =
-                " \n" +
-                "Menu \n" +
-                "---------------------------------------- \n" +
-                " 1. Wszyscy pracownicy \n" +
-                " 2. Pracownik o podanym id \n" +
-                " 3. Nowy pracownik \n" +
+                """
+                
+                Menu
+                ----------------------------------------
+                 1. Wszyscy pracownicy
+                 2. Pracownik o podanym id
+                 3. Nowy pracownik
 
-                " 4. Wszystkie działy \n" +
-                " 5. Nowy dział \n" +
+                 4. Wszystkie działy
+                 5. Nowy dział
 
-                " 6. Pracownicy zatrudnieni w określonym dziale \n" +
-                " 7. Pracownicy zatrudnieni na określonym stanowisku \n" +
-                " 8. Pracownicy o pensji powyżej określonej wartości \n" +
-                " 9. Pracownicy zatrudnieni po określonej dacie \n" +
+                 6. Pracownicy zatrudnieni w określonym dziale
+                 7. Pracownicy zatrudnieni na określonym stanowisku
+                 8. Pracownicy o pensji powyżej określonej wartości
+                 9. Pracownicy zatrudnieni po określonej dacie
 
-                "10. Koniec \n";
-        System.out.println(menu);
+                10. Koniec
+                """;
+        System.out.print(menu);
     }
 
 }
